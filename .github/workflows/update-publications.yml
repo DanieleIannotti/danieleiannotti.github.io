@@ -1,0 +1,31 @@
+name: Update publications
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 6 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Update publications.json
+        run: python update_publications.py
+
+      - name: Commit updated publications
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update publications from INSPIRE-HEP
+          file_pattern: publications.json

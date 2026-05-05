@@ -1,676 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daniele Iannotti | Theoretical Physicist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    /* ── TOKENS ─────────────────────────────────────── */
-    :root {
-      --green:      #2d6a4f;
-      --green-mid:  #40916c;
-      --green-lt:   #74c69d;
-      --green-bg:   #d8f3dc;
-      --cream:      #f8f7f2;
-      --body:       #262626;
-      --dark:       #333333;
-      --gray:       #6b7280;
-      --border:     #e2ddd4;
-    }
+  <title>Daniele Iannotti | Theoretical Physics</title>
 
-    /* ── RESET / BASE ───────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; }
+  <meta name="description" content="Daniele Iannotti is a PhD student in theoretical physics working on quantum information, quantum many-body physics, and quantum gravity.">
 
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
-      background-color: var(--cream);
-      color: var(--body);
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--green);
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
-
-    /* ── NAV ────────────────────────────────────────── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--cream);
-      border-bottom: 3px solid var(--green);
-      padding: 0 2em;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-name {
-      font-family: "Open Sans Condensed", sans-serif;
-      font-weight: 700;
-      font-size: 1.05em;
-      color: var(--green);
-      padding: 0.9em 0;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-
-    .nav-links li a {
-      display: block;
-      padding: 0.9em 1.1em;
-      font-family: "Open Sans Condensed", sans-serif;
-      font-size: 0.95em;
-      color: var(--gray);
-      transition: color 0.18s;
-    }
-    .nav-links li a:hover {
-      color: var(--green);
-      text-decoration: none;
-    }
-
-    /* ── MAIN WRAPPER ───────────────────────────────── */
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 2em 5em;
-    }
-
-    /* ── HERO ───────────────────────────────────────── */
-    .hero {
-      display: flex;
-      gap: 2.5em;
-      align-items: flex-start;
-      padding: 3.5em 0 2.5em;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 3em;
-    }
-
-    .avatar {
-      width: 155px;
-      height: 155px;
-      border-radius: 50%;
-      border: 3px solid var(--green);
-      background: var(--green-bg);
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Open Sans Condensed", sans-serif;
-      font-weight: 700;
-      font-size: 2.2em;
-      color: var(--green);
-      overflow: hidden;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-body h1 {
-      font-family: "Open Sans Condensed", sans-serif;
-      font-size: 2.3em;
-      color: var(--dark);
-      margin: 0 0 0.1em;
-      line-height: 1.1;
-    }
-
-    .hero-body .role {
-      font-style: italic;
-      color: var(--gray);
-      margin: 0 0 0.4em;
-    }
-
-    .hero-body .affil {
-      font-size: 0.92em;
-      color: var(--gray);
-      margin: 0 0 1.4em;
-      line-height: 1.5;
-    }
-
-    .blockquote {
-      border-left: 3px solid var(--green-lt);
-      background: rgba(116, 198, 157, 0.08);
-      margin: 0;
-      padding: 0.6em 1.1em;
-      border-radius: 0 5px 5px 0;
-    }
-
-    .blockquote p {
-      margin: 0;
-      font-style: italic;
-      color: var(--gray);
-      font-size: 0.95em;
-      line-height: 1.6;
-    }
-
-    .blockquote cite {
-      display: block;
-      margin-top: 0.35em;
-      font-size: 0.82em;
-      color: #aaa;
-      font-style: normal;
-    }
-
-    /* ── SECTION HEADINGS ───────────────────────────── */
-    section {
-      margin-bottom: 3.5em;
-    }
-
-    h2 {
-      font-family: "Open Sans Condensed", sans-serif;
-      font-size: 1.45em;
-      color: var(--dark);
-      border-bottom: 2px solid var(--green);
-      padding-bottom: 0.3em;
-      margin: 0 0 1.2em;
-      text-align: left;
-    }
-
-    /* ── ABOUT ──────────────────────────────────────── */
-    .about p {
-      max-width: 740px;
-      margin: 0 0 1em;
-    }
-
-    .about em {
-      color: var(--green-mid);
-      font-style: normal;
-      font-weight: 600;
-    }
-
-    /* ── CURRENTLY WIDGET ───────────────────────────── */
-    .currently {
-      display: inline-flex;
-      flex-direction: column;
-      gap: 0.45em;
-      background: #edf7f1;
-      border: 1px solid #b7e4c7;
-      border-radius: 8px;
-      padding: 1em 1.4em;
-      font-size: 0.92em;
-      margin-top: 0.8em;
-    }
-
-    .curr-row {
-      display: flex;
-      gap: 0.7em;
-    }
-
-    .curr-label {
-      min-width: 85px;
-      color: #9ca3af;
-      font-style: italic;
-    }
-
-    .curr-val {
-      color: var(--body);
-    }
-
-    /* ── TIMELINE ───────────────────────────────────── */
-    .timeline {
-      position: relative;
-      padding-left: 1.6em;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      bottom: 0.6em;
-      width: 2px;
-      background: #c8e6d4;
-    }
-
-    .tl-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 0 1em;
-      padding-bottom: 1.6em;
-    }
-
-    .tl-item:last-child { padding-bottom: 0; }
-
-    .tl-item::before {
-      content: '';
-      position: absolute;
-      left: -6px;
-      top: 0.48em;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--green);
-      border: 2.5px solid var(--cream);
-    }
-
-    .tl-year {
-      font-family: "Open Sans Condensed", sans-serif;
-      font-weight: 700;
-      font-size: 0.88em;
-      color: var(--green);
-      padding-top: 0.15em;
-    }
-
-    .tl-inst {
-      font-weight: 600;
-      color: var(--dark);
-    }
-
-    .tl-deg {
-      font-size: 0.88em;
-      color: var(--gray);
-      margin-top: 0.1em;
-    }
-
-    /* ── PUBLICATIONS ───────────────────────────────── */
-    .pub-subhead {
-      font-family: "Open Sans Condensed", sans-serif;
-      font-size: 1em;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      margin: 1.8em 0 0.6em;
-    }
-
-    .pub-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .pub-item {
-      padding: 1em 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .pub-item:last-child { border-bottom: none; }
-
-    .pub-title {
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 0.2em;
-    }
-
-    .pub-title a { color: var(--green); }
-
-    .pub-authors {
-      font-size: 0.88em;
-      color: var(--gray);
-      margin-bottom: 0.12em;
-    }
-
-    .pub-authors .me { color: var(--body); font-weight: 600; }
-
-    .pub-venue {
-      font-size: 0.88em;
-      color: var(--gray);
-      font-style: italic;
-    }
-
-    .badge {
-      display: inline-block;
-      font-size: 0.72em;
-      font-family: "Open Sans Condensed", sans-serif;
-      padding: 0.1em 0.55em;
-      border-radius: 3px;
-      vertical-align: middle;
-      margin-left: 0.45em;
-      letter-spacing: 0.03em;
-    }
-
-    .badge-new   { background: #d1fae5; color: #065f46; }
-    .badge-arxiv { background: #fef3c7; color: #92400e; }
-    .badge-pub   { background: #e0e7ff; color: #3730a3; }
-
-    /* ── OUTREACH ───────────────────────────────────── */
-    .outreach-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1em;
-    }
-
-    .out-card {
-      background: #edf7f1;
-      border: 1px solid #b7e4c7;
-      border-radius: 7px;
-      padding: 1.1em 1.3em;
-    }
-
-    .out-card h3 {
-      font-family: "Open Sans Condensed", sans-serif;
-      font-size: 1.05em;
-      color: var(--green-mid);
-      margin: 0 0 0.3em;
-    }
-
-    .out-card p {
-      font-size: 0.9em;
-      color: var(--gray);
-      margin: 0;
-    }
-
-    /* ── CONTACT ────────────────────────────────────── */
-    .contact-info {
-      font-size: 0.95em;
-      color: var(--gray);
-      line-height: 1.8;
-      margin-bottom: 1.3em;
-    }
-
-    .social-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7em;
-    }
-
-    .social-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35em;
-      padding: 0.5em 1.1em;
-      background: var(--green);
-      color: #fff !important;
-      border-radius: 5px;
-      font-family: "Open Sans Condensed", sans-serif;
-      font-size: 0.88em;
-      letter-spacing: 0.04em;
-      text-decoration: none !important;
-      transition: background 0.18s;
-    }
-
-    .social-btn:hover { background: #1e4d38; }
-
-    /* ── FOOTER ─────────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 2em 1em;
-      font-size: 0.82em;
-      color: #b5b0a6;
-      border-top: 1px solid var(--border);
-    }
-
-    /* ── RESPONSIVE ─────────────────────────────────── */
-    @media (max-width: 640px) {
-      .hero            { flex-direction: column; gap: 1.5em; padding-top: 2em; }
-      .avatar          { width: 110px; height: 110px; font-size: 1.7em; }
-      .outreach-grid   { grid-template-columns: 1fr; }
-      .tl-item         { grid-template-columns: 46px 1fr; }
-      nav              { padding: 0 1em; }
-      .nav-name        { font-size: 0.95em; }
-      .nav-links li a  { padding: 0.9em 0.7em; font-size: 0.85em; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ████ NAV ████████████████████████████████████████ -->
-<nav>
-  <span class="nav-name">Daniele Iannotti</span>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#cv">Journey</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#outreach">Outreach</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <header>
+    <nav>
+      <a href="#home" class="name">Daniele Iannotti</a>
 
-<!-- ████ MAIN ████████████████████████████████████████ -->
-<main>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#journey">Journey</a>
+        <a href="#outreach">Outreach</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-  <!-- HERO ─────────────────────────────────────────── -->
-  <div class="hero" id="hero">
-    <!--
-      To add your photo, replace the "DI" text with:
-        <img src="photo.jpg" alt="Daniele Iannotti" />
-      and place photo.jpg in the same folder.
-    -->
-    <div class="avatar">DI</div>
+  <main id="home">
 
-    <div class="hero-body">
+    <section class="hero">
+      <p class="label">Theoretical Physics · Quantum Information · Quantum Gravity</p>
+
       <h1>Daniele Iannotti</h1>
-      <p class="role">PhD Candidate · Theoretical Physics</p>
-      <p class="affil">
-        Scuola Superiore Meridionale, Naples<br />
-        &amp; Universität zu Köln (visiting)<br />
-        <em style="font-style:normal; color:#9ca3af; font-size:0.95em;">Supervisor: Prof. Alioscia Hamma</em>
+
+      <p class="subtitle">
+        PhD student working at the interface of quantum information theory,
+        quantum many-body physics, and quantum gravity.
       </p>
-      <blockquote class="blockquote">
-        <p>"Il forse è la parola più bella del vocabolario italiano, perché apre delle possibilità, non certezze. Perché non cerca la fine, ma va verso l'infinito."</p>
-        <cite>— Giacomo Leopardi</cite>
-      </blockquote>
-    </div>
-  </div>
 
-  <!-- ABOUT ────────────────────────────────────────── -->
-  <section id="about" class="about">
-    <h2>🌱 About</h2>
+      <p>
+        Scuola Superiore Meridionale, Naples · Universität zu Köln, visiting
+      </p>
 
-    <p>
-      I am a PhD student at <em>Scuola Superiore Meridionale</em> in Naples and a visiting PhD student at <em>Universität zu Köln</em>. My research sits at the intersection of <em>quantum information theory</em>, <em>quantum many-body physics</em>, and <em>quantum gravity</em>.
-    </p>
-
-    <p>
-      My overarching theme is understanding <em>quantum complexity</em> — how entanglement and magic (non-stabilizerness) together characterize the structure of many-body quantum states, and how symmetries, geometry, and holography constrain this complexity. I am particularly interested in the holographic interpretation of quantum resources via AdS/CFT, black holes, and the mathematical language of topology and differential geometry that underpins modern theoretical physics. <em>If I can draw it, I understand it.</em>
-    </p>
-
-    <p>
-      I am a team member of <a href="https://qmeets.org">qmeets seminars</a> and a quantum contributor to <em>Physics World</em> at IOP Publishing.
-    </p>
-
-    <div class="currently">
-      <div class="curr-row">
-        <span class="curr-label">🎵 listening</span>
-        <span class="curr-val">Hans Zimmer</span>
+      <div class="buttons">
+        <a href="assets/cv.pdf">CV</a>
+        <a href="mailto:d.iannotti@ssmeridionale.it">Email</a>
+        <a href="https://scholar.google.com">Google Scholar</a>
+        <a href="https://arxiv.org">arXiv</a>
       </div>
-      <div class="curr-row">
-        <span class="curr-label">📖 reading</span>
-        <span class="curr-val">Circe</span>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+
+      <p>
+        I am a PhD student at Scuola Superiore Meridionale in Naples and a
+        visiting PhD student at Universität zu Köln. My research sits at the
+        intersection of quantum information theory, quantum many-body physics,
+        and quantum gravity.
+      </p>
+
+      <p>
+        My overarching theme is understanding quantum complexity: how
+        entanglement and magic, or non-stabilizerness, characterize the
+        structure of many-body quantum states, and how symmetries, geometry,
+        and holography constrain this complexity.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+
+      <div class="cards">
+        <article>
+          <h3>Quantum resources</h3>
+          <p>
+            Entanglement, magic, stabilizer entropy, non-stabilizerness, and
+            their role in many-body quantum systems.
+          </p>
+        </article>
+
+        <article>
+          <h3>Quantum gravity</h3>
+          <p>
+            Holography, AdS/CFT, black holes, and the possible resource-theoretic
+            interpretation of spacetime structures.
+          </p>
+        </article>
+
+        <article>
+          <h3>Mathematical structures</h3>
+          <p>
+            Differential geometry, topology, algebraic structures, and geometric
+            methods in quantum information.
+          </p>
+        </article>
       </div>
-      <div class="curr-row">
-        <span class="curr-label">📍 in</span>
-        <span class="curr-val">Cologne, DE</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ACADEMIC JOURNEY ─────────────────────────────── -->
-  <section id="cv">
-    <h2>🍀 Academic Journey</h2>
+    <section id="publications">
+      <h2>Publications</h2>
 
-    <div class="timeline">
+      <h3>Preprints</h3>
 
-      <div class="tl-item">
-        <div class="tl-year">2020</div>
-        <div class="tl-content">
-          <div class="tl-inst"><a href="https://www.phys.uniroma1.it/fisica/">La Sapienza University of Rome</a></div>
-          <div class="tl-deg">BSc in Physics</div>
-        </div>
-      </div>
+      <article class="publication">
+        <h4>Non-local Magic of Fermionic Gaussian Systems</h4>
+        <p>D. Iannotti, B. Magni, R. Cioli, A. Hamma, X. Turkeshi</p>
+        <p>arXiv preprint, submitted March 2026</p>
+      </article>
 
-      <div class="tl-item">
-        <div class="tl-year">2022</div>
-        <div class="tl-content">
-          <div class="tl-inst"><a href="https://df.units.it/">University of Trieste</a></div>
-          <div class="tl-deg">MSc in Theoretical Physics — supervisors: Prof. Stefano Ansoldi, Dr. Antonio Pittelli</div>
-        </div>
-      </div>
+      <article class="publication">
+        <h4>Non-stabilizerness and U(1) Symmetry in Chaotic Many-Body Systems</h4>
+        <p>D. Iannotti, A. Russotto, B. Jasser, J. Odavić, A. Hamma</p>
+        <p>arXiv preprint, submitted March 2026</p>
+      </article>
 
-      <div class="tl-item">
-        <div class="tl-year">PhD</div>
-        <div class="tl-content">
-          <div class="tl-inst">
-            <a href="https://www.ssmeridionale.it">Scuola Superiore Meridionale</a>
-            &amp; <a href="https://www.uni-koeln.de">Universität zu Köln</a>
-          </div>
-          <div class="tl-deg">PhD in Cosmology, Space Science &amp; Space Technology — <em>ongoing</em></div>
-        </div>
-      </div>
+      <article class="publication">
+        <h4>Geometric Methods in Quantum Information and Entanglement Variational Principle</h4>
+        <p>D. Iannotti, A. Hamma</p>
+        <p>arXiv:2403.13102, 2024</p>
+      </article>
 
-    </div>
-  </section>
+      <h3>Peer-reviewed publications</h3>
 
-  <!-- PUBLICATIONS ─────────────────────────────────── -->
-  <section id="publications">
-    <h2>🌿 Publications</h2>
+      <article class="publication">
+        <h4>Van Hove Singularities in Stabilizer Entropy Densities</h4>
+        <p>D. Iannotti, L. Campos Venuti, A. Hamma</p>
+        <p>Journal of Physics A, 2026</p>
+      </article>
 
-    <p style="font-size:0.92em; color:var(--gray); margin-bottom:0.5em;">
-      Full list on
-      <a href="https://scholar.google.com/citations?user=SbR9_rMAAAAJ&hl=en">Google Scholar</a>
-      and
-      <a href="https://arxiv.org/search/?searchtype=author&query=Iannotti+D">arXiv</a>.
-      An asterisk (*) denotes equal contribution.
-    </p>
+      <article class="publication">
+        <h4>Entanglement and Stabilizer Entropies of Random Bipartite Pure States</h4>
+        <p>D. Iannotti, M. Esposito, L. Campos Venuti, A. Hamma</p>
+        <p>Quantum, 2025</p>
+      </article>
+    </section>
 
-    <!-- PREPRINTS -->
-    <div class="pub-subhead">Preprints</div>
-    <ul class="pub-list">
+    <section id="journey">
+      <h2>Academic Journey</h2>
 
-      <li class="pub-item">
-        <div class="pub-title">
-          Non-local Magic of Fermionic Gaussian Systems
-          <span class="badge badge-new">new</span>
-          <span class="badge badge-arxiv">arXiv 2026</span>
-        </div>
-        <div class="pub-authors">
-          <span class="me">D. Iannotti</span>, B. Magni, R. Cioli, A. Hamma, X. Turkeshi
-        </div>
-        <div class="pub-venue">arXiv preprint, submitted March 2026</div>
-      </li>
+      <ul class="timeline">
+        <li>
+          <strong>2020</strong> — BSc in Physics, La Sapienza University of Rome
+        </li>
+        <li>
+          <strong>2022</strong> — MSc in Theoretical Physics, University of Trieste
+        </li>
+        <li>
+          <strong>PhD</strong> — Scuola Superiore Meridionale & Universität zu Köln
+        </li>
+      </ul>
+    </section>
 
-      <li class="pub-item">
-        <div class="pub-title">
-          Non-stabilizerness and U(1) Symmetry in Chaotic Many-Body Systems
-          <span class="badge badge-new">new</span>
-          <span class="badge badge-arxiv">arXiv 2026</span>
-        </div>
-        <div class="pub-authors">
-          <span class="me">D. Iannotti</span>, A. Russotto, B. Jasser, J. Odavić, A. Hamma
-        </div>
-        <div class="pub-venue">arXiv preprint, submitted March 2026</div>
-      </li>
+    <section id="outreach">
+      <h2>Outreach</h2>
 
-      <li class="pub-item">
-        <div class="pub-title">
-          <a href="https://arxiv.org/abs/2403.13102">
-            Geometric Methods in Quantum Information and Entanglement Variational Principle
-          </a>
-          <span class="badge badge-arxiv">arXiv 2024</span>
-        </div>
-        <div class="pub-authors">
-          <span class="me">D. Iannotti</span>, A. Hamma
-        </div>
-        <div class="pub-venue">arXiv:2403.13102 (2024)</div>
-      </li>
+      <p>
+        I am a team member of qmeets seminars and a quantum contributor to
+        Physics World at IOP Publishing.
+      </p>
+    </section>
 
-    </ul>
+    <section id="outside">
+      <h2>Outside Academia</h2>
 
-    <!-- PEER-REVIEWED -->
-    <div class="pub-subhead">Peer-reviewed Publications</div>
-    <ul class="pub-list">
+      <p>
+        I enjoy writing poems, reading, painting, drawing, listening to classical
+        music, and playing volleyball. Recently, I have started learning piano,
+        climbing, and photography.
+      </p>
+    </section>
 
-      <li class="pub-item">
-        <div class="pub-title">
-          Van Hove Singularities in Stabilizer Entropy Densities
-          <span class="badge badge-pub">J. Phys. A</span>
-        </div>
-        <div class="pub-authors">
-          <span class="me">D. Iannotti</span>, L. Campos Venuti, A. Hamma
-        </div>
-        <div class="pub-venue">Journal of Physics A (2026)</div>
-      </li>
+    <section id="contact">
+      <h2>Contact</h2>
 
-      <li class="pub-item">
-        <div class="pub-title">
-          Entanglement and Stabilizer Entropies of Random Bipartite Pure States
-          <span class="badge badge-pub">Quantum</span>
-        </div>
-        <div class="pub-authors">
-          <span class="me">D. Iannotti</span>, M. Esposito, L. Campos Venuti, A. Hamma
-        </div>
-        <div class="pub-venue">Quantum (2025)</div>
-      </li>
+      <p>
+        Quantum Information Theory Lab, UNINA<br>
+        Scuola Superiore Meridionale, Naples, Italy
+      </p>
 
-    </ul>
-  </section>
+      <p>
+        Email: <a href="mailto:d.iannotti@ssmeridionale.it">d.iannotti@ssmeridionale.it</a>
+      </p>
+    </section>
 
-  <!-- OUTREACH ─────────────────────────────────────── -->
-  <section id="outreach">
-    <h2>ⓞⓤⓣⓡⓔⓒⓗ Outreach</h2>
+  </main>
 
-    <div class="outreach-grid">
-      <div class="out-card">
-        <h3>Physics World</h3>
-        <p>
-          Quantum contributor at IOP Publishing — writing accessible research news about recent quantum science papers for a physics-literate audience.
-        </p>
-      </div>
-      <div class="out-card">
-        <h3>qmeets Seminars</h3>
-        <p>
-          Team member of qmeets, a seminar series at the intersection of quantum information and quantum gravity.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- OUTSIDE ACADEMIA ─────────────────────────────── -->
-  <section id="personal">
-    <h2>🌕 Outside Academia</h2>
-    <p>
-      I enjoy writing poems, reading, painting, drawing, listening to classical music, and playing volleyball. Recently I have started learning to play the piano, climbing, and photography — especially now that I have a professional camera with me.
-    </p>
-  </section>
-
-  <!-- CONTACT ──────────────────────────────────────── -->
-  <section id="contact">
-    <h2>✉️ Contact</h2>
-    <div class="contact-info">
-      Quantum Information Theory Lab, UNINA<br />
-      Scuola Superiore Meridionale, Naples, Italy<br />
-      <a href="mailto:d.iannotti@ssmeridionale.it">d.iannotti@ssmeridionale.it</a>
-    </div>
-    <div class="social-row">
-      <a class="social-btn" href="https://scholar.google.com/citations?user=SbR9_rMAAAAJ&hl=en" target="_blank" rel="noopener">
-        Google Scholar
-      </a>
-      <a class="social-btn" href="https://arxiv.org/search/?searchtype=author&query=Iannotti+D" target="_blank" rel="noopener">
-        arXiv
-      </a>
-      <a class="social-btn" href="https://danieleiannotti.notion.site/47a42a4d4f814032b41c68e25f3f3553" target="_blank" rel="noopener">
-        Notion Page
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ████ FOOTER ██████████████████████████████████████ -->
-<footer>
-  &copy; 2026 Daniele Iannotti &nbsp;·&nbsp; built with 🌿
-</footer>
+  <footer>
+    <p>© 2026 Daniele Iannotti</p>
+  </footer>
 
 </body>
 </html>

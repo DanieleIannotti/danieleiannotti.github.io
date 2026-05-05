@@ -32,7 +32,7 @@
 
     <section class="hero">
   <div class="hero-text">
-    <p class="label">Theoretical Physics · Quantum Information · Quantum Gravity</p>
+    <p class="label">Theoretical Physics · Quantum Information </p>
 
     <h1>Daniele Iannotti</h1>
 
@@ -49,6 +49,7 @@
       <a href="assets/cv.pdf">CV</a>
       <a href="mailto:d.iannotti@ssmeridionale.it">Email</a>
       <a href="https://scholar.google.com/citations?user=SbR9_rMAAAAJ&hl=en">Google Scholar</a>
+      <a href="https://inspirehep.net/authors/2680286?ui-citation-summary=true">INSPIRE-HEP</a>
       <a href="https://arxiv.org/search/quant-ph?searchtype=author&query=Iannotti,+D">arXiv</a>
     </div>
   </div>
@@ -107,42 +108,17 @@
     </section>
 
     <section id="publications">
-      <h2>Publications</h2>
+  <h2>Publications</h2>
 
-      <h3>Preprints</h3>
+  <p>
+    Publications are loaded automatically from
+    <a href="https://inspirehep.net/authors/2680286?ui-citation-summary=true">INSPIRE-HEP</a>.
+  </p>
 
-      <article class="publication">
-        <h4>Non-local Magic of Fermionic Gaussian Systems</h4>
-        <p>D. Iannotti, B. Magni, R. Cioli, A. Hamma, X. Turkeshi</p>
-        <p>arXiv preprint, submitted March 2026</p>
-      </article>
-
-      <article class="publication">
-        <h4>Non-stabilizerness and U(1) Symmetry in Chaotic Many-Body Systems</h4>
-        <p>D. Iannotti, A. Russotto, B. Jasser, J. Odavić, A. Hamma</p>
-        <p>arXiv preprint, submitted March 2026</p>
-      </article>
-
-      <article class="publication">
-        <h4>Geometric Methods in Quantum Information and Entanglement Variational Principle</h4>
-        <p>D. Iannotti, A. Hamma</p>
-        <p>arXiv:2403.13102, 2024</p>
-      </article>
-
-      <h3>Peer-reviewed publications</h3>
-
-      <article class="publication">
-        <h4>Van Hove Singularities in Stabilizer Entropy Densities</h4>
-        <p>D. Iannotti, L. Campos Venuti, A. Hamma</p>
-        <p>Journal of Physics A, 2026</p>
-      </article>
-
-      <article class="publication">
-        <h4>Entanglement and Stabilizer Entropies of Random Bipartite Pure States</h4>
-        <p>D. Iannotti, M. Esposito, L. Campos Venuti, A. Hamma</p>
-        <p>Quantum, 2025</p>
-      </article>
-    </section>
+  <div id="publications-list">
+    <p>Loading publications from INSPIRE-HEP...</p>
+  </div>
+</section>
 
     <section id="journey">
       <h2>Academic Journey</h2>
@@ -194,9 +170,95 @@
 
   </main>
 
-  <footer>
+    <footer>
     <p>© 2026 Daniele Iannotti</p>
   </footer>
+
+  <script>
+    async function loadPublications() {
+      const publicationsList = document.getElementById("publications-list");
+
+      const url =
+        "https://inspirehep.net/api/literature?q=a%20D.Iannotti.1&sort=mostrecent&size=20";
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const papers = data.hits.hits;
+
+        if (!papers || papers.length === 0) {
+          publicationsList.innerHTML = "<p>No publications found.</p>";
+          return;
+        }
+
+        publicationsList.innerHTML = "";
+
+        papers.forEach((paper) => {
+          const metadata = paper.metadata;
+
+          const title = metadata.titles?.[0]?.title || "Untitled";
+          const year =
+            metadata.publication_info?.[0]?.year ||
+            metadata.preprint_date?.slice(0, 4) ||
+            "Year unknown";
+
+          const authors = metadata.authors
+            ?.slice(0, 8)
+            .map((author) => author.full_name)
+            .join(", ");
+
+          const authorText =
+            metadata.authors && metadata.authors.length > 8
+              ? authors + ", et al."
+              : authors || "Authors unavailable";
+
+          const recordUrl =
+            paper.links?.html ||
+            "https://inspirehep.net/literature/" + paper.id;
+
+          const arxiv =
+            metadata.arxiv_eprints?.[0]?.value
+              ? "https://arxiv.org/abs/" + metadata.arxiv_eprints[0].value
+              : null;
+
+          const journal =
+            metadata.publication_info?.[0]?.journal_title
+              ? metadata.publication_info[0].journal_title
+              : null;
+
+          const citations =
+            metadata.citation_count !== undefined
+              ? metadata.citation_count
+              : null;
+
+          const article = document.createElement("article");
+          article.className = "publication";
+
+          article.innerHTML = `
+            <h4>${title}</h4>
+            <p>${authorText}</p>
+            <p>
+              ${year}
+              ${journal ? " · " + journal : ""}
+              ${citations !== null ? " · Citations: " + citations : ""}
+            </p>
+            <p>
+              <a href="${recordUrl}">INSPIRE</a>
+              ${arxiv ? ` · <a href="${arxiv}">arXiv</a>` : ""}
+            </p>
+          `;
+
+          publicationsList.appendChild(article);
+        });
+      } catch (error) {
+        publicationsList.innerHTML =
+          "<p>Could not load publications automatically. Please visit my INSPIRE-HEP profile instead.</p>";
+      }
+    }
+
+    loadPublications();
+  </script>
 
 </body>
 </html>

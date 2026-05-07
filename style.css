@@ -303,71 +303,7 @@ section > p {
   color: var(--text);
 }
 
-.timeline {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-width: 760px;
-}
-
-.timeline li {
-  padding: 18px 0 18px 24px;
-  border-left: 1px solid var(--line);
-  position: relative;
-}
-
-.timeline li::before {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: 27px;
-  width: 9px;
-  height: 9px;
-  background: var(--accent);
-  border-radius: 999px;
-}
-
-footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 34px 24px;
-  color: var(--muted);
-}
-
-@media (max-width: 860px) {
-  nav {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .hero {
-    min-height: auto;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 72px 0;
-  }
-
-  .hero::before {
-    display: none;
-  }
-
-  .hero-photo::before {
-    display: none;
-  }
-
-  .hero-photo img {
-    margin-left: 0;
-    max-width: 210px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 56px 0;
-  }
-}
+/* Academic Journey */
 
 .journey-section {
   display: block;
@@ -454,7 +390,7 @@ footer {
 .journey-logo-text {
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 250, 240, 0.7);
+  background: rgba(255, 255, 255, 0.045);
 }
 
 .journey-logo-text span {
@@ -478,4 +414,117 @@ footer {
   color: var(--text);
   font-size: 1.12rem;
   line-height: 1.35;
+}
+
+footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 34px 24px;
+  color: var(--muted);
+}
+
+/* Mobile */
+
+@media (max-width: 860px) {
+  nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 72px 0;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .hero-photo::before {
+    display: none;
+  }
+
+  .hero-photo img {
+    margin-left: 0;
+    max-width: 210px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 56px 0;
+  }
+
+  .journey-heading {
+    margin-bottom: 32px;
+  }
+
+  .journey-track {
+    display: block;
+    padding-left: 24px;
+  }
+
+  .journey-track::before {
+    top: 0;
+    bottom: 0;
+    left: 6px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+
+  .journey-track::after {
+    display: none;
+  }
+
+  .journey-stop {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    column-gap: 20px;
+    margin-bottom: 36px;
+  }
+
+  .journey-year {
+    grid-column: 2;
+    grid-row: 1;
+    height: auto;
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+  }
+
+  .journey-dot {
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    margin: 0;
+  }
+
+  .journey-logo {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    width: 70px;
+    height: 70px;
+    margin: 0;
+  }
+
+  .journey-stop h3 {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: none;
+    margin: 0 0 4px;
+    font-size: 1rem;
+  }
+
+  .journey-stop p {
+    grid-column: 2;
+    grid-row: 3;
+    max-width: none;
+    margin: 0;
+    font-size: 1rem;
+  }
 }

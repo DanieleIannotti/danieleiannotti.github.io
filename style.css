@@ -481,6 +481,58 @@ footer {
   color: var(--muted);
 }
 
+/* Art page */
+
+.art-hero {
+  padding: 96px 0 64px;
+}
+
+.art-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.art-piece {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.art-piece:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 255, 111, 0.38);
+  background:
+    linear-gradient(180deg, rgba(215, 255, 111, 0.075), rgba(255, 255, 255, 0.025));
+}
+
+.art-piece img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.art-piece div {
+  padding: 18px 20px 20px;
+}
+
+.art-piece h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.art-piece p {
+  margin: 0;
+  color: var(--muted);
+}
+
 /* Mobile */
 
 @media (max-width: 860px) {

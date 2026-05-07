@@ -271,7 +271,7 @@ section > p {
 
 .cards article h3 {
   margin-top: 0;
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .cards article p,

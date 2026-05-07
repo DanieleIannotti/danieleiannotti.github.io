@@ -411,7 +411,7 @@ section > p {
 .aj-item:last-child::after {
   content: "";
   position: absolute;
-  top: 88px;
+  top: 86px;
   left: calc(50% - 2px);
   width: 0;
   height: 0;

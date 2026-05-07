@@ -44,7 +44,7 @@
     <section class="art-gallery">
 
       <article class="art-piece">
-        <img src="assets/drawings/drawing-01.jpg" alt="Drawing by Daniele Iannotti">
+        <img src="assets/drawings/drawing-01.jpeg" alt="Drawing by Daniele Iannotti">
         <div>
           <h2>Untitled I</h2>
           <p>Drawing, year.</p>
@@ -52,7 +52,7 @@
       </article>
 
       <article class="art-piece">
-        <img src="assets/drawings/drawing-02.jpg" alt="Drawing by Daniele Iannotti">
+        <img src="assets/drawings/drawing-02.jpeg" alt="Drawing by Daniele Iannotti">
         <div>
           <h2>Untitled II</h2>
           <p>Drawing, year.</p>

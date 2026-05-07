@@ -307,63 +307,64 @@ section > p {
   display: block;
 }
 
-.journey-heading {
+.journey-section h2 {
   margin-bottom: 56px;
 }
 
-.journey-row {
+.journey-line-layout {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  padding-top: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 28px;
 }
 
-.journey-row::before {
+/* Single continuous line */
+.journey-line-layout::before {
   content: "";
   position: absolute;
-  top: 54px;
+  top: 51px;
   left: 12.5%;
   right: 12.5%;
-  height: 4px;
+  height: 3px;
   background: var(--accent);
   border-radius: 999px;
   z-index: 0;
 }
 
-.journey-row::after {
+/* Final arrow */
+.journey-line-layout::after {
   content: "";
   position: absolute;
-  top: 46px;
+  top: 43px;
   right: 12.2%;
   width: 0;
   height: 0;
-  border-left: 15px solid var(--accent);
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-left: 14px solid var(--accent);
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
   z-index: 1;
 }
 
-.journey-step {
+.journey-item {
   position: relative;
-  text-align: center;
   z-index: 2;
+  text-align: center;
   min-width: 0;
 }
 
-.journey-years {
+.journey-range {
   height: 34px;
   margin-bottom: 8px;
   color: var(--muted);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   white-space: nowrap;
 }
 
-.journey-marker {
-  width: 20px;
-  height: 20px;
-  margin: 0 auto 42px;
+.journey-dot {
+  width: 18px;
+  height: 18px;
+  margin: 0 auto 38px;
   border-radius: 999px;
   background: var(--bg);
   border: 4px solid var(--accent);
@@ -371,9 +372,9 @@ section > p {
 }
 
 .journey-logo {
-  width: 112px;
-  height: 112px;
-  margin: 0 auto 22px;
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -387,19 +388,19 @@ section > p {
   opacity: 0.82;
 }
 
-.journey-step h3 {
-  max-width: 240px;
-  margin: 0 auto 10px;
+.journey-item h3 {
+  max-width: 230px;
+  margin: 0 auto 8px;
   color: var(--muted);
-  font-size: 1.18rem;
+  font-size: 1.12rem;
   line-height: 1.25;
 }
 
-.journey-step p {
-  max-width: 240px;
+.journey-item p {
+  max-width: 230px;
   margin: 0 auto;
   color: var(--text);
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   line-height: 1.35;
 }
 
@@ -446,72 +447,75 @@ footer {
     padding: 56px 0;
   }
 
-  .journey-heading {
+  .journey-section h2 {
     margin-bottom: 32px;
   }
 
-  .journey-row {
-    display: block;
+  .journey-line-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 30px;
     padding-left: 28px;
   }
 
-  .journey-row::before {
+  .journey-line-layout::before {
     top: 0;
     bottom: 0;
     left: 6px;
     right: auto;
-    width: 4px;
+    width: 3px;
     height: auto;
   }
 
-  .journey-row::after {
+  .journey-line-layout::after {
     display: none;
   }
 
-  .journey-step {
+  .journey-item {
     display: grid;
-    grid-template-columns: 78px minmax(0, 1fr);
+    grid-template-columns: 74px minmax(0, 1fr);
     column-gap: 18px;
     text-align: left;
-    margin-bottom: 34px;
   }
 
-  .journey-years {
+  .journey-range {
     grid-column: 2;
     grid-row: 1;
     height: auto;
     margin: 0 0 6px;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
-  .journey-marker {
+  .journey-dot {
     position: absolute;
     left: -31px;
-    top: 4px;
-    width: 18px;
-    height: 18px;
+    top: 3px;
+    width: 17px;
+    height: 17px;
     margin: 0;
   }
 
   .journey-logo {
     grid-column: 1;
-    grid-row: 1 / span 4;
-    width: 64px;
-    height: 64px;
+    grid-row: 1 / span 3;
+    width: 62px;
+    height: 62px;
     margin: 0;
   }
 
-  .journey-step h3 {
+  .journey-item h3 {
     grid-column: 2;
+    grid-row: 2;
     max-width: none;
     margin: 0 0 4px;
     font-size: 1rem;
   }
 
-  .journey-step p {
+  .journey-item p {
     grid-column: 2;
+    grid-row: 3;
     max-width: none;
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 }

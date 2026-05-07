@@ -418,7 +418,6 @@ section > p {
   border-left: 15px solid #7a3e2d;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  transform: translateX(28px);
   z-index: 3;
 }
 

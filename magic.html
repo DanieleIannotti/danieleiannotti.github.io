@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Why study quantum magic? | Daniele Iannotti</title>
+
+  <meta name="description" content="An introduction to quantum magic and non-stabilizerness in many-body physics.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="name logo-name">
+        <img src="assets/logo.png" alt="Daniele Iannotti logo">
+        <span>Daniele Iannotti</span>
+      </a>
+
+      <div class="links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#journey">Journey</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#outreach">Outreach</a>
+        <a href="art.html">Art</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      <p class="label">Quantum information and many-body physics</p>
+      <h1>Why study quantum magic?</h1>
+
+      <div class="article-intro">
+        <p>
+          A central aim of quantum many-body physics is to understand and classify the collective behaviour of quantum matter. Traditionally, this is done through quantities such as symmetry, magnetic order, superconductivity, and topology. Quantum information adds another powerful perspective: entanglement.
+        </p>
+
+        <p>
+          Entanglement entropy can distinguish phases and critical points, diagnose topological order, and quantify the structure of quantum states. Its importance extends further. It constrains the classical simulation of many-body systems, describes the spreading of quantum information after a quench, and provides the language through which geometry emerges in holographic theories of gravity. Page’s result on the typical entanglement of random states is a benchmark for quantum chaos, while the Ryu–Takayanagi formula connects entanglement to the area of a bulk extremal surface.
+        </p>
+
+        <p>
+          Yet entanglement does not capture all forms of quantum complexity. A stabilizer state, for example, can be highly entangled while still being efficiently simulable on a classical computer. To distinguish this kind of tractable entanglement from genuinely non-Clifford quantum structure, one needs an additional resource: <strong>non-stabilizerness</strong>, often called <strong>quantum magic</strong>.
+        </p>
+
+        <p>
+          Magic was originally introduced as the resource that promotes Clifford operations to universal fault-tolerant quantum computation. It has since become a useful diagnostic in many-body physics, where it complements entanglement.
+        </p>
+      </div>
+
+      <section>
+        <h2>Universal structure and phases of matter</h2>
+
+        <p>
+          Magic can reveal universal information not fixed by a single bipartite entanglement entropy. In conformal field theories, stabilizer Rényi entropies can contain universal terms controlled by conformal data and boundary conditions. In the presence of defects, they can probe the associated fusion structure and non-invertible symmetries.
+        </p>
+
+        <p>
+          More broadly, magic can retain signatures of symmetry classes that are washed out in conventional observables. This makes it a promising diagnostic of quantum phases and universal structures, particularly when the relevant information is not tied only to the geometry of an entanglement cut.
+        </p>
+      </section>
+
+      <section>
+        <h2>Classical simulation and quantum complexity</h2>
+
+        <p>
+          Entanglement measures the complexity of representing a quantum state in terms of its Schmidt decomposition. Magic instead measures its non-Clifford structure. These are related but distinct notions.
+        </p>
+
+        <p>
+          Matrix-product-state methods are efficient when the required bond dimension is small, but bond dimension alone does not decide whether a state can be simulated efficiently using stabilizer-based methods. A state may have substantial entanglement and remain tractable if its structure is close to the stabilizer sector; conversely, relatively modest magic can introduce a qualitatively new source of classical difficulty.
+        </p>
+
+        <p>
+          This complementarity is useful both conceptually and practically. Hybrid descriptions combining Clifford circuits with tensor-network states isolate the entangling part of a wavefunction from its non-Clifford complexity. Magic can also determine which state properties can be accessed by restricted measurement architectures and when additional non-Clifford resources are required for learning or simulation.
+        </p>
+      </section>
+
+      <section>
+        <h2>Chaos, thermalisation, and symmetry</h2>
+
+        <p>
+          Entanglement grows in both generic chaotic dynamics and exactly simulable Clifford circuits. Therefore, volume-law entanglement or operator spreading alone does not establish genuinely quantum-chaotic behaviour.
+        </p>
+
+        <p>
+          Magic provides a resource-sensitive refinement. In controlled models of doped Clifford circuits, an extensive number of non-Clifford gates is required to reproduce the signatures of generic quantum chaos. Stabilizer entropy and related quantities thus probe the complexity of operator-space randomisation beyond entanglement.
+        </p>
+
+        <p>
+          Conservation laws make this question richer. A conserved charge restricts the accessible Hilbert space and modifies the distribution of observables, entanglement, and random-state behaviour within each symmetry sector. Magic offers a way to quantify how these restrictions affect ergodicity and chaos beyond what is determined by the dimension of a sector alone.
+        </p>
+      </section>
+
+      <section>
+        <h2>Geometry and gravitational back-reaction</h2>
+
+        <p>
+          In holographic theories, entanglement entropy captures the leading geometric area term. However, exact stabilizer tensor-network codes already reproduce Ryu–Takayanagi-like entropy relations while remaining insensitive to much of the state-dependent quantum structure expected in gravity.
+        </p>
+
+        <p>
+          Non-local magic offers a possible refinement. It isolates the part of non-stabilizerness that cannot be removed by local basis changes, separating genuinely correlated quantum structure from local contributions. In holographic toy models, this quantity has been related to departures from flat entanglement spectra, state-dependent area terms, and gravitational back-reaction.
+        </p>
+
+        <p>
+          These results do not establish a general equivalence between magic and gravity. They do, however, suggest that quantum resources beyond entanglement may be needed to describe state-dependent geometric information.
+        </p>
+      </section>
+
+      <p class="article-back"><a href="index.html#research">← Back to Research</a></p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 Daniele Iannotti</p>
+  </footer>
+
+</body>
+</html>

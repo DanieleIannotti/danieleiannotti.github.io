@@ -1,5 +1,14 @@
 [
   {
+    "title": "Colored Weingarten Calculus for Block-Unitary Ensemble",
+    "authors": "D. Iannotti, E. Vallini",
+    "year": "2026",
+    "journal": "Article",
+    "inspire": "https://inspirehep.net/literature/3207939",
+    "arxiv": "https://arxiv.org/abs/2609.30385",
+    "doi": ""
+  },
+  {
     "title": "A journey through Flatland: What does the antiflatness of a spectrum teach us?",
     "authors": "B. Jasser, D. Iannotti, A. Hamma",
     "year": "2026",
@@ -38,11 +47,11 @@
   {
     "title": "Non-stabilizerness and violations of CHSH inequalities",
     "authors": "S. Cusumano, L. C. Venuti, S. Cepollaro, I. De Simone, G. Esposito, D. Iannotti, B. Jasser, J. Odavić, et al.",
-    "year": "2025",
-    "journal": "Article",
+    "year": "2026",
+    "journal": "Quantum, 10, 2214",
     "inspire": "https://inspirehep.net/literature/2908067",
     "arxiv": "https://arxiv.org/abs/2504.03351",
-    "doi": ""
+    "doi": "https://doi.org/10.22331/q-2026-09-21-2214"
   },
   {
     "title": "Entanglement and Stabilizer entropies of random bipartite pure quantum states",

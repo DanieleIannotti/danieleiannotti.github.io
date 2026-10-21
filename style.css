@@ -645,3 +645,94 @@ section > p {
   font-size: 0.8rem;
   color: rgba(167, 160, 144, 0.75);
 }
+/* Research - Slides & Talks */
+
+.research-slides {
+  margin-top: 64px;
+}
+
+.research-slides > h3 {
+  font-size: 1.8rem;
+  letter-spacing: -0.035em;
+  margin: 0 0 12px;
+}
+
+.slides-intro {
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.slides-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.slide-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.055),
+      rgba(255,255,255,0.025)
+    );
+
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 24px;
+
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.slide-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215,255,111,0.38);
+}
+
+.slide-type {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  margin-bottom: 18px;
+}
+
+.slide-card h4 {
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+
+.slide-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 24px;
+}
+
+.slide-card a {
+  margin-top: auto;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.slide-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+  .research-slides {
+    margin-top: 48px;
+  }
+
+  .slides-grid {
+    grid-template-columns: 1fr;
+  }
+}

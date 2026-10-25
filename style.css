@@ -736,3 +736,21 @@ section > p {
     grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 861px) {
+  .aj-track {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+    padding: 52px 0 48px;
+  }
+
+  .aj-track::after {
+    top: 102px;
+    left: calc(10% - 8px);
+    right: calc(10% - 8px);
+  }
+
+  .aj-years {
+    font-size: 1.1rem;
+  }
+}

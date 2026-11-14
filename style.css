@@ -202,20 +202,6 @@ h4 {
   position: relative;
 }
 
-.hero-photo::before {
-  content: "quantum information / many-body physics / gravity";
-  position: absolute;
-  left: -58px;
-  bottom: 18px;
-  transform: rotate(-90deg);
-  transform-origin: left bottom;
-  color: rgba(243, 239, 230, 0.45);
-  font-size: 0.76rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
 .hero-photo img {
   width: 100%;
   max-width: 280px;

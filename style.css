@@ -136,6 +136,7 @@ section {
     -48px 82px 0 rgba(243, 239, 230, 0.5),
     96px 126px 0 rgba(215, 255, 111, 0.6);
   opacity: 0.8;
+  pointer-events: none;
 }
 
 .hero-text {
@@ -822,5 +823,21 @@ section > p {
 
   .aj-years {
     font-size: 1.1rem;
+  }
+}
+
+/* WIDER DESKTOP LAYOUT */
+
+@media (min-width: 1200px) {
+  :root {
+    --max-width: 1600px;
+  }
+
+  .hero {
+    grid-template-columns:
+      minmax(0, 1.1fr)
+      minmax(0, 1.5fr)
+      minmax(0, 0.7fr);
+    gap: 48px;
   }
 }

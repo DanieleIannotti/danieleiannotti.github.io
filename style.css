@@ -138,25 +138,6 @@ section {
   position: relative;
 }
 
-/* DECORATIVE DOTS */
-
-.hero::before {
-  content: "";
-  position: absolute;
-  right: 220px;
-  top: 130px;
-  width: 11px;
-  height: 11px;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow:
-    56px 40px 0 rgba(155, 215, 255, 0.9),
-    -48px 82px 0 rgba(243, 239, 230, 0.5),
-    96px 126px 0 rgba(215, 255, 111, 0.6);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
 /* PHOTO - LEFT */
 
 .hero-photo {

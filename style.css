@@ -11,6 +11,8 @@
   --max-width: 1120px;
 }
 
+/* GENERAL */
+
 * {
   box-sizing: border-box;
 }
@@ -24,9 +26,22 @@ body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   background:
-    radial-gradient(circle at 20% 0%, rgba(215, 255, 111, 0.12), transparent 34rem),
-    radial-gradient(circle at 85% 10%, rgba(155, 215, 255, 0.11), transparent 30rem),
-    linear-gradient(180deg, #0f1117 0%, #11131a 55%, #0f1117 100%);
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(215, 255, 111, 0.12),
+      transparent 34rem
+    ),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(155, 215, 255, 0.11),
+      transparent 30rem
+    ),
+    linear-gradient(
+      180deg,
+      #0f1117 0%,
+      #11131a 55%,
+      #0f1117 100%
+    );
   color: var(--text);
   line-height: 1.65;
 }
@@ -123,7 +138,7 @@ section {
   position: relative;
 }
 
-/* Subtle decorative dots */
+/* DECORATIVE DOTS */
 
 .hero::before {
   content: "";
@@ -245,7 +260,7 @@ section {
   margin-bottom: 0;
 }
 
-/* GENERAL TYPOGRAPHY */
+/* TYPOGRAPHY */
 
 h1 {
   font-size: clamp(4rem, 10vw, 8.6rem);
@@ -341,7 +356,7 @@ section > p {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -387,10 +402,19 @@ section > p {
   color: var(--muted);
 }
 
-/* PUBLICATIONS */
+/* PUBLICATIONS - TWO COLUMNS */
+
+#publications-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
 
 .publication {
-  margin-bottom: 16px;
+  margin-bottom: 0;
+  height: 100%;
+  min-width: 0;
   transition:
     transform 0.16s ease,
     border-color 0.16s ease,
@@ -416,15 +440,17 @@ section > p {
   color: var(--text);
 }
 
-/* OUTREACH */
+/* OUTREACH - TWO COLUMNS */
 
 .outreach-list {
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
   margin-top: 28px;
 }
 
 .outreach-item {
+  min-width: 0;
   background:
     linear-gradient(
       180deg,
@@ -724,11 +750,13 @@ section > p {
   text-decoration: underline;
 }
 
-/* RESPONSIVE LAYOUT: TABLETS */
+/* TABLET LAYOUT */
 
 @media (min-width: 861px) and (max-width: 1100px) {
   .hero {
-    grid-template-columns: minmax(0, 250px) minmax(0, 1fr);
+    grid-template-columns:
+      minmax(0, 250px)
+      minmax(0, 1fr);
     gap: 36px;
   }
 
@@ -748,7 +776,7 @@ section > p {
   }
 }
 
-/* RESPONSIVE LAYOUT: MOBILE */
+/* MOBILE LAYOUT */
 
 @media (max-width: 860px) {
   nav {
@@ -789,6 +817,18 @@ section > p {
   }
 
   .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Publications: one column */
+
+  #publications-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Outreach: one column */
+
+  .outreach-list {
     grid-template-columns: 1fr;
   }
 
